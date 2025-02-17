@@ -11,52 +11,10 @@
         body {
             margin: 0;
             padding: 0;
-            /* ... other body styles ... */
+            overflow: hidden;
+            background-color: black;
         }
 
-        #snowfall-container {
-            position: relative;
-            height: 50vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-        }
-    </style>
-</head>
-<body>  <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" data-sentry-component="SiteHeader" data-sentry-source-file="site-header.tsx">
-        <div class="container flex h-14 max-w-screen-2xl items-center">
-            <div class="mr-4 hidden md:flex" data-sentry-component="MainNav" data-sentry-source-file="main-nav.tsx">
-                <a class="mr-6 flex items-center space-x-2" data-sentry-element="Link" data-sentry-source-file="main-nav.tsx" href="/">
-                    <span class="hidden font-bold sm:inline-block">KeyGuardian</span>
-                </a>
-                <nav class="flex items-center text-sm gap-1">
-                    <a class="transition-colors hover:text-foreground/80 text-foreground" href="/">
-                        <button class="relative rounded-sm bg-transparent px-2.5 py-2 text-sm text-muted-foreground transition-colors hover:bg-black/10 hover:text-black dark:hover:bg-white/5 dark:hover:text-white  duration-75">Home</button>
-                    </a>
-                    <a class="transition-colors hover:text-foreground/80 text-foreground" href="/services">
-                        <button class="relative rounded-sm bg-transparent px-2.5 py-2 text-sm text-muted-foreground transition-colors hover:bg-black/10 hover:text-black dark:hover:bg-white/5 dark:hover:text-white  duration-75">Services</button>
-                    </a>
-                </nav>
-            </div>
-            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-9 py-2 mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden" data-sentry-element="Button" data-sentry-source-file="mobile-nav.tsx" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:Rjf9la:" data-state="closed">
-                <svg stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" data-sentry-element="svg" data-sentry-source-file="mobile-nav.tsx">
-                    <path d="M3 5H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-sentry-element="path" data-sentry-source-file="mobile-nav.tsx"></path>
-                    <path d="M3 12H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-sentry-element="path" data-sentry-source-file="mobile-nav.tsx"></path>
-                    <path d="M3 19H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-sentry-element="path" data-sentry-source-file="mobile-nav.tsx"></path>
-                </svg>
-                <span class="sr-only">Toggle Menu</span>
-            </button>
-            <div class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-                <nav class="flex items-center space-x-1">
-                    <a data-sentry-element="Link" data-sentry-source-file="site-header.tsx" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent/40 hover:text-accent-foreground h-9 py-2 px-2.5" href="https://discord.gg/pzE9V9ugfh">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" data-sentry-element="svg" data-sentry-source-file="site-header.tsx">
-                            <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.51
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
         #snowfall-container {
             position: relative;
             height: 50vh;
