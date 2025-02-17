@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>KeypProt</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <meta content="noindex, nofollow" name="robots"/>
+</head>
+<body>
+    <div class="container-fluid" id="snowfall-container">
+        <h1 class="text-center text-white">Welcome to KeyProt!</h1>
+        <p class="text-center text-white">join our discord for more info .gg/Server</p>
+    </div>
+
+    <div class="container">  <div class="row">   <div class="col-md-6">  <div class="grid-item">
+                    <h2 class="text-white">Grid Item 1</h2>
+                    <p class="text-white">Some text for the first grid item.</p>
+                    <i class="fas fa-address-book text-white"></i>
+
+                </div>
+            </div>
+            <div class="col-md-6">  <div class="grid-item">
+                    <h2 class="text-white">Grid Item 2</h2>
+                    <p class="text-white">Some text for the second grid item.</p>
+                    <i class="fas fa-address-book text-white"></i>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="snowflakes"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        // ... (snowfall script remains the same)
+        (function() {
+            window.onload = function() {
+                parent.iframeLoaded();
+            }
+        })();
+        try {
+            $(document).ready(function() {
+                const snowflakeCount = 100;
+
+                for (let i = 0; i < snowflakeCount; i++) {
+                    const size = Math.random() * 10 + 5;
+                    const leftPosition = Math.random() * 100;
+                    const animationDuration = Math.random() * 3 + 2;
+
+                    const snowflake = $('<div class="snowflake"></div>').css({
+                        width: size + 'px',
+                        height: size + 'px',
+                        left: leftPosition + '%',
+                        animationDuration: animationDuration + 's',
+                        animationDelay: Math.random() * 5 + 's'
+                    });
+
+                    $('#snowflakes').append(snowflake);
+                }
+            });
+        } catch (e) {
+            console.log("Error in JS code", e);
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+</html>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Keep the snow effect covering the whole background */
+        background-color: black;
+    }
+
+    #snowfall-container {
+        position: relative;
+        height: 50vh; /* Adjust the height as needed */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .container { /* Style the container for the grid */
+        position: relative;
+        z-index: 2; /* Ensure it's above the snowfall */
+        padding-top: 20px; /* Add some spacing from the title */
+    }
+
+    .grid-item {
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for grid items */
+        padding: 20px;
+        border-radius: 10px;
+        margin: 10px; /* Space between grid items */
+    }
+
+    h1, p, h2 {
+        z-index: 2; /* Ensure text is above the snow */
+    }
+
+    #snowflakes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .snowflake {
+        position: absolute;
+        top: -10%;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.8;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(100vh);
+        }
+    }
+</style>
