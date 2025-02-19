@@ -1,162 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>KeypProt</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-    <meta content="noindex, nofollow" name="robots"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script>
-    <script>
-<script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1152263"></script>
-    </script>
-    <style>
-        /* style.css */
-        :root {
-            --background-color: black;  /* Default: Dark theme */
-            --text-color: white;
-            --grid-background: rgba(0, 0, 0, 0.5);
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-
-        .navbar {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px 20px;
-        }
-
-        .navbar-brand img {
-            height: 40px;
-        }
-
-        .navbar-nav .nav-link {
-            color: white !important;
-        }
-
-        #snowfall-container {
-            position: relative;
-            height: 50vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-            padding-top: 20px;
-        }
-
-        .grid-item {
-            background-color: var(--grid-background);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 10px;
-        }
-
-        h1, p, h2 {
-            z-index: 2;
-        }
-
-        #snowflakes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .snowflake {
-            position: absolute;
-            top: -10%;
-            background: white;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
-        }
-
-        /* Light Theme Styles (Example - You can toggle this with JavaScript) */
-        body.light-theme {
-            --background-color: white;
-            --text-color: black;
-            --grid-background: rgba(200, 200, 200, 0.7); /* Light gray */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Gateway</title>
 </head>
 <body>
+    <h2>Welcome to the Gateway</h2>
+    <p>Redirecting you shortly...</p>
 
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">
-            <img src="logo.png" alt="Logo"> </a>
-        <div class="ml-auto">
-            <a class="btn btn-outline-light" href="/">Home</a>
-            <a class="btn btn-outline-light" href="/discord">Discord</a>
-        </div>
-    </nav>
-
-    <div class="container-fluid" id="snowfall-container"></div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="grid-item">
-                    <h2 class="text-white">Grid Item 1</h2>
-                    <p class="text-white">Some text for the first grid item.</p>
-                    <i class="fas fa-address-book text-white"></i>
-                    <a href="YOUR_LINKVERTISE_LINK_HERE">Monetized Link 1</a> 
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="grid-item">
-                    <h2 class="text-white">Grid Item 2</h2>
-                    <p class="text-white">Some text for the second grid item.</p>
-                    <i class="fas fa-address-book text-white"></i>
-                    <a href="YOUR_LINKVERTISE_LINK_HERE">Monetized Link 2</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="snowflakes"></div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function() {
-            const snowflakeCount = 60;
-            for (let i = 0; i < snowflakeCount; i++) {
-                const size = Math.random() * 10 + 5;
-                const leftPosition = Math.random() * 100;
-                const animationDuration = Math.random() * 3 + 2;
-                const snowflake = $('<div class="snowflake"></div>').css({
-                    width: size + 'px',
-                    height: size + 'px',
-                    left: leftPosition + '%',
-                    animationDuration: animationDuration + 's',
-                    animationDelay: Math.random() * 5 + 's'
-                });
-                $('#snowflakes').append(snowflake);
-            }
-        });
+        // Step 1: Generate unique session ID and provider ID (you can replace these with a real session generator)
+        function generateUniqueID() {
+            return Math.random().toString(36).substring(2, 15);
+        }
+
+        const sessionID = generateUniqueID();
+        const providerID = generateUniqueID();
+
+        // Step 2: Prepare the redirect URL with base64-encoded query parameters
+        const redirectURL = "https://linkvertise.com/1283485/337.8461901063581/dynamic";
+        const targetURL = "https://keyguardian.org/a/1210?id=" + sessionID + "&providerId=" + providerID;
+
+        // Base64 encode the URL for redirection
+        function base64Encode(str) {
+            return btoa(str); // Using btoa() to base64 encode the URL
+        }
+
+        const encodedTargetURL = base64Encode(targetURL);
+
+        // Step 3: Redirect to the monetization service (Linkvertise)
+        window.location.href = `${redirectURL}?r=${encodedTargetURL}&o=sharing`;
+
+        // Step 4: After the user returns, you'll need to check the token for verification
+        function checkToken(token) {
+            // This is where you would verify the token with your server
+            fetch('/verify-token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ token: token })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.isValid) {
+                    alert("Token is valid! Access granted.");
+                    // Redirect to the content page
+                    window.location.href = 'https://yourcontentpage.com';
+                } else {
+                    alert("Invalid token. Please try again.");
+                }
+            })
+            .catch(error => console.error('Error verifying token:', error));
+        }
+
+        // Simulate returning from the redirect page with a token
+        // In real use, you'd get the token from the URL or another source
+        const mockToken = "your_return_token_from_the_redirect";  // Replace this with the actual token from the URL
+        checkToken(mockToken);
     </script>
 </body>
 </html>
