@@ -9,18 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
     <script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script>
     <script>
-        // Replace 1271027 with your actual publisher ID!
-        linkvertise(1271027, {
-            whitelist: [], // Or add domains you want to monetize: ["example.com", "another.net"]
-            blacklist: []  // Or add domains you *don't* want to monetize: ["badsite.com"]
-        });
+        // ***REPLACE 1271027 WITH YOUR ACTUAL PUBLISHER ID!!!***
+        linkvertise(1271027, {}); // Empty object means no whitelist/blacklist for now
     </script>
     <style>
+        /* style.css */
+        :root {
+            --background-color: black;  /* Default: Dark theme */
+            --text-color: white;
+            --grid-background: rgba(0, 0, 0, 0.5);
+        }
+
         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: black;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
 
         .navbar {
@@ -53,7 +58,7 @@
         }
 
         .grid-item {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: var(--grid-background);
             padding: 20px;
             border-radius: 10px;
             margin: 10px;
@@ -89,6 +94,13 @@
                 transform: translateY(100vh);
             }
         }
+
+        /* Light Theme Styles (Example - You can toggle this with JavaScript) */
+        body.light-theme {
+            --background-color: white;
+            --text-color: black;
+            --grid-background: rgba(200, 200, 200, 0.7); /* Light gray */
+        }
     </style>
 </head>
 <body>
@@ -102,26 +114,24 @@
         </div>
     </nav>
 
-    <div class="container-fluid" id="snowfall-container">
-    </div>
+    <div class="container-fluid" id="snowfall-container"></div>
 
-    <div class="d-flex justify-content-center align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="grid-item">
-                        <h2 class="text-white">Grid Item 1</h2>
-                        <p class="text-white">Some text for the first grid item.</p>
-                        <i class="fas fa-address-book text-white"></i>
-                        <a href="YOUR_LINKVERTISE_LINK_HERE">Monetized Link 1</a> <br>  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="grid-item">
+                    <h2 class="text-white">Grid Item 1</h2>
+                    <p class="text-white">Some text for the first grid item.</p>
+                    <i class="fas fa-address-book text-white"></i>
+                    <a href="YOUR_LINKVERTISE_LINK_HERE">Monetized Link 1</a> 
                 </div>
-                <div class="col-md-6">
-                    <div class="grid-item">
-                        <h2 class="text-white">Grid Item 2</h2>
-                        <p class="text-white">Some text for the second grid item.</p>
-                        <i class="fas fa-address-book text-white"></i>
-                         <a href="YOUR_LINKVERTISE_LINK_HERE">Monetized Link 2</a>
-                    </div>
+            </div>
+            <div class="col-md-6">
+                <div class="grid-item">
+                    <h2 class="text-white">Grid Item 2</h2>
+                    <p class="text-white">Some text for the second grid item.</p>
+                    <i class="fas fa-address-book text-white"></i>
+                    <a href="YOUR_LINKVERTISE_LINK_HERE">Monetized Link 2</a>
                 </div>
             </div>
         </div>
