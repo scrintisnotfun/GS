@@ -1,155 +1,117 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>KeypProt</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZhdiNNRu+gxWjDUg9m9H9l/0JxMNq9p9uIw99x99yn" crossorigin="anonymous">
-    <meta content="noindex, nofollow" name="robots">
-    <meta content="noindex, nofollow" name="robots">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script src="https://cdn.tailwindcss.com"></script>
-
-</head>
-<body class="bg-black">
-
-    <nav class="border-gray-700 px-4 lg:px-6 py-2.5 mb-14 bg-gray-800">
-        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-            <a href="./" class="flex items-center">
-                <span class="self-center text-xl font-semibold text-white">KeypProt</span>
-            </a>
-            <div class="flex items-center lg:order-2">
-                <a href="./login" class="text-gray-400 hover:text-white focus:ring-0 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 mr-2 hover:opacity-60 transition duration-200 focus:outline-none focus:ring-gray-600">
-                    Login
-                </a>
-                <a href="./register" class="text-white focus:ring-0 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 mr-2 bg-blue-600 hover:opacity-80 focus:outline-none focus:ring-blue-800 transition duration-200">
-                    Register
-                </a>
-                <button data-collapse-toggle="mmenu" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-0" aria-controls="mmenu" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </div>
-            <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mmenu">
-                <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                    <li>
-                        <a href="./" class="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 text-gray-400 hover:text-white lg:hover:bg-transparent border-gray-700 transition duration-200" aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="./Scripts" class="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 text-gray-400 hover:text-white lg:hover:bg-transparent border-gray-700 transition duration-200">Scripts</a>
-                    </li>
-                    <li>
-                        <a href="./Executor" class="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 text-gray-400 hover:text-white lg:hover:bg-transparent border-gray-700 transition duration-200">
-                            Executors
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./gateway100" class="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 text-gray-400 hover:text-white lg:hover:bg-transparent border-gray-700 transition duration-200">
-                            Get Key
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./discord" class="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 text-gray-400 hover:text-white lg:hover:bg-transparent border-gray-700 transition duration-200">
-                            Discord
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container-fluid" id="snowfall-container">
-        <h1 class="text-center text-white">
-            Welcome to KeyProt!
-        </h1>
-        <p class="text-center text-white">
-            join our discord for more info .gg/Server
-        </p>
-    </div>
-    <div id="snowflakes"></div>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: black;
-        }
-
-        #snowfall-container {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-        }
-
-        h1, p {
-            z-index: 2;
-        }
-
-        #snowflakes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .snowflake {
-            position: absolute;
-            top: -10%;
-            background: white;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
-        }
-    </style>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIhpThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-
-    <script>
-        (function() {
-            window.onload = function() {
-                parent.iframeLoaded();
-            }
-        })();
-
-        $(document).ready(function() {
-const snowflakeCount = 100;
-
-            for (let i = 0; i < snowflakeCount; i++) {
-                const size = Math.random() * 10 + 5; // Random size between 5 and 15
-                const leftPosition = Math.random() * 100; // Random left position
-                const animationDuration = Math.random() * 3 + 2; // Random duration between 2s and 5s
-
-                const snowflake = $('<div class="snowflake"></div>').css({
-                    width: size + 'px',
-                    height: size + 'px',
-                    left: leftPosition + '%',
-                    animationDuration: animationDuration + 's',
-                    animationDelay: Math.random() * 5 + 's' // Random delay
-                });
-
-                $('#snowflakes').append(snowflake);
-            }
-        });
-    </script>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+KeypProt  </title>
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+<meta content="noindex, nofollow" name="robots"/>
+<meta content="noindex, nofollow" name="robots"/></head>
+<body>
+<div class="container-fluid" id="snowfall-container">
+<h1 class="text-center text-white">
+    Welcome to KeyProt!
+   </h1>
+<p class="text-center text-white">
+join our discord for more info .gg/Server </p>
+</div>
+<div id="snowflakes">
+</div>
+<!-- jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+</script>
 </body>
 </html>
+
+
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+#snowfall-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+h1, p {
+    z-index: 2;
+}
+
+#snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10%;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+</style>
+
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"></script>
+<script>
+    (function() {
+        window.onload = function() {
+            parent.iframeLoaded();
+        }
+    })();
+    try {
+    $(document).ready(function() {
+    const snowflakeCount = 100;
+
+    for (let i = 0; i < snowflakeCount; i++) {
+        const size = Math.random() * 10 + 5; // Random size between 5 and 15
+        const leftPosition = Math.random() * 100; // Random left position
+        const animationDuration = Math.random() * 3 + 2; // Random duration between 2s and 5s
+
+        const snowflake = $('<div class="snowflake"></div>').css({
+            width: size + 'px',
+            height: size + 'px',
+            left: leftPosition + '%',
+            animationDuration: animationDuration + 's',
+            animationDelay: Math.random() * 5 + 's' // Random delay
+        });
+
+        $('#snowflakes').append(snowflake);
+    }
+});
+    } catch (e) {
+        console.log("Error in JS code", e);
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</html>
+    
