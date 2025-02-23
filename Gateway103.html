@@ -65,8 +65,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./gateway100" class="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 text-gray-400 hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700 transition duration-200">
-                                Get Key
+                            <a href="./viewkey" class="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 text-gray-400 hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700 transition duration-200">
+                                View Keys
                             </a>
                         </li>
                         <li>
@@ -151,22 +151,18 @@
     </section>
 
     <div id="overlay"></div>
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
+    <div id="container-d346d49dc3aa153789af37394f6f3f70"></div>
+
+    <div id="overlay"></div>
     <script>
-        const adLink = "https://www.effectiveratecpm.com/zimbbhs7j?key=05b95d4b0c82f06168c13633ae8c1f79";
+        const overlay = document.getElementById('overlay');
+        const adLink = "https://nauseousrocketjosephine.com/v6k7w5cetn?key=b1982d357532cd35b4c84eaf5c32ffe1";
 
-        // Add a click listener to the entire document
-        document.addEventListener('click', () => {
-            // Open the link in a new tab
+        overlay.addEventListener('click', () => {
             window.open(adLink, '_blank');
-
-            // Remove the event listener to prevent multiple ad opens
-            document.removeEventListener('click', openAd); // Corrected this line
+            overlay.remove();
         });
-
-        // Function to open the ad (used for removing the listener)
-        function openAd() {
-           window.open(adLink, '_blank');
-        }
     </script>
 </body>
 
