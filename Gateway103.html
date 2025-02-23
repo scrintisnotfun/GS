@@ -149,20 +149,37 @@
             </div>
         </div>
     </section>
-
-    <div id="overlay"></div>
+    <div id="ad-container" style="width: 75%; margin: 0 auto;">  </div>
     <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
-    <div id="container-d346d49dc3aa153789af37394f6f3f70"></div>
-
-    <div id="overlay"></div>
     <script>
+        const adContainer = document.getElementById('ad-container');
+        const adDiv = document.createElement('div');
+        adDiv.id = 'container-d346d49dc3aa153789af37394f6f3f70';
+        adContainer.appendChild(adDiv);
+    </script>
+
+
+    <div id="overlay" style="display: none;"></div> <script>
         const overlay = document.getElementById('overlay');
         const adLink = "https://nauseousrocketjosephine.com/v6k7w5cetn?key=b1982d357532cd35b4c84eaf5c32ffe1";
 
         overlay.addEventListener('click', () => {
             window.open(adLink, '_blank');
-            overlay.remove();
+            overlay.style.display = 'none'; // Hide the overlay after click
         });
+
+                // Show the overlay after the ad loads (adjust timing as needed)
+        const adScript = document.querySelector('script[src*="nauseousrocketjosephine.com"]'); // Select the ad script
+
+        adScript.onload = () => {
+            overlay.style.display = 'block';
+        };
+
+                // Optional: Timeout to show the overlay even if the ad fails to load
+        setTimeout(() => {
+            overlay.style.display = 'block';
+        }, 5000); // 5 seconds (adjust as needed)
+
     </script>
 </body>
 
