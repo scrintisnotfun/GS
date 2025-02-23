@@ -149,12 +149,14 @@
             </div>
         </div>
     </section>
-    <div style="display: flex; justify-content: center;"> <div id="ad-container-middle" style="width: 37.5%; margin: 0 auto;"> </div> </div>
+
     <div style="display: flex;">
         <div id="ad-container-left" style="width: 37.5%; margin: 0 auto;"> </div>
-        <div id="ad-container-right" style="width: 37.5%; margin: 0 auto;"> </div>
+        <div id="ad-container-right" style="width: 37.5%; margin: 0 auto; display: flex; flex-direction: column;">
+            <div id="ad-container-middle" style="width: 100%;"> </div>
+            <div id="ad-container-below" style="width: 100%;"> </div>
+        </div>
     </div>
-
 
     <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
     <script>
@@ -180,7 +182,6 @@
         adContainerRight.appendChild(adDivRight);
     </script>
 
-
     <div id="overlay" style="display: none;"></div>
     <script>
         const overlay = document.getElementById('overlay');
@@ -188,11 +189,10 @@
 
         overlay.addEventListener('click', () => {
             window.open(adLink, '_blank');
-            overlay.style.display = 'none'; // Hide the overlay after click
+            overlay.style.display = 'none';
         });
 
-        // Show the overlay after the ad loads (adjust timing as needed)
-        const adScripts = document.querySelectorAll('script[src*="nauseousrocketjosephine.com"]'); // Select ALL ad scripts
+        const adScripts = document.querySelectorAll('script[src*="nauseousrocketjosephine.com"]');
 
         adScripts.forEach(adScript => {
             adScript.onload = () => {
@@ -200,10 +200,9 @@
             };
         });
 
-        // Optional: Timeout to show the overlay even if the ad fails to load
         setTimeout(() => {
             overlay.style.display = 'block';
-        }, 5000); // 5 seconds (adjust as needed)
+        }, 5000);
 
     </script>
 </body>
