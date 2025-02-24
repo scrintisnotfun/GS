@@ -26,19 +26,24 @@
             height: 100%;
             z-index: 9999;
             cursor: pointer;
-            display: none; /* Initially hidden */
         }
 
+        /* Add this CSS to position the new ad container */
         #ad-container-new-right {
-            width: 25%;
-            margin: 0 auto;
+            position: fixed;
+            top: 50%; /* Center vertically */
+            right: 20px; /* Position on the right side with some margin */
+            transform: translateY(-50%); /* Center vertically */
+            width: 25%; /* Smaller width */
+            z-index: 1000;
         }
 
+        /* Ensure the ad content scales down */
         #ad-container-new-right > div {
-            transform: scale(0.8);
-            transform-origin: top left;
-            background: none;
-            border: none;
+            transform: scale(0.8); /* Scale down the ad content */
+            transform-origin: top left; /* Ensure scaling starts from the top-left corner */
+            background: none; /* Remove background */
+            border: none; /* Remove border */
         }
     </style>
 </head>
@@ -94,7 +99,7 @@
     </header>
 
     <section id="plans">
-<div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
             <div class="mx-auto max-w-screen-md text-center">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Key System</h2>
                 <p class="font-light mb-12 text-gray-400 sm:text-xl">We offer a variety of Gateways to suit your
@@ -105,7 +110,7 @@
                 <div class="w-full md:w-1/3 p-7 animate-on-scroll-right animate__animated animate__backInRight">
                     <div class="h-full p-8 border border-[#0f0f17] rounded-xl bg-[#0f0f17]">
                         <div class="flex flex-wrap justify-between border-b border-gray-800 pb-7 mb-7">
-                            <div class="w-full xl:w-auto">
+<div class="w-full xl:w-auto">
                                 <h3 class="font-bold text-2xl text-white">Linkvertise</h3>
                             </div>
                             <div class="w-full xl:w-auto xl:text-right">
@@ -159,18 +164,38 @@
                         </button>
                     </div>
                 </div>
-
-                <div class="w-full md:w-1/4 p-7 animate-on-scroll-right animate__animated animate__backInRight" id="ad-container-new-right">
-                    <div id="ad-content-new-right"></div>
-                </div>
             </div>
         </div>
     </section>
 
+    <!-- New ad container for the right side -->
+    <div id="ad-container-new-right">
+        <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
+        <div id="container-26f99f279d9572c177802119f182ef42"></div>
+    </div>
+
+    <!-- Existing ad containers -->
     <div style="display: flex;">
         <div id="ad-container-left" style="width: 37.5%; margin: 0 auto;"></div>
         <div id="ad-container-right" style="width: 37.5%; margin: 0 auto;"></div>
     </div>
+
+    <!-- Existing scripts -->
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
+    <script>
+        const adContainerLeft = document.getElementById('ad-container-left');
+        const adDivLeft = document.createElement('div');
+        adDivLeft.id = 'container-d346d49dc3aa153789af37394f6f3f70';
+        adContainerLeft.appendChild(adDivLeft);
+    </script>
+
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/05eae561a20f1048cd6a66809e334afc/invoke.js"></script>
+    <script>
+        const adContainerRight = document.getElementById('ad-container-right');
+        const adDivRight = document.createElement('div');
+        adDivRight.id = 'container-05eae561a20f1048cd6a66809e334afc';
+        adContainerRight.appendChild(adDivRight);
+    </script>
 
     <div id="overlay" style="display: none;"></div>
     <script>
@@ -195,52 +220,6 @@
         setTimeout(() => {
             overlay.style.display = 'block';
         }, 5000); // 5 seconds (adjust as needed)
-
-
-        // Load the new right side ad
-        const adContainerNewRight = document.getElementById('ad-content-new-right');
-        const adScriptNewRight = document.createElement('script');
-        adScriptNewRight.async = true;
-        adScriptNewRight.dataset.cfasync = false;
-        adScriptNewRight.src = "//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js";
-        adContainerNewRight.appendChild(adScriptNewRight);
-
-        const adDivNewRight = document.createElement('div');
-        adDivNewRight.id = 'container-26f99f279d9572c177802119f182ef42';
-        adContainerNewRight.appendChild(adDivNewRight);
-
-
-        // Load and manage old left side ad
-        const adContainerLeft = document.createElement('div');
-        adContainerLeft.id = 'ad-container-left';
-        document.body.appendChild(adContainerLeft);
-
-        const adScriptLeft = document.createElement('script');
-        adScriptLeft.async = true;
-        adScriptLeft.dataset.cfasync = false;
-adScriptLeft.src = "//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js";
-        adContainerLeft.appendChild(adScriptLeft);
-
-        const adDivLeft = document.createElement('div');
-        adDivLeft.id = 'container-d346d49dc3aa153789af37394f6f3f70';
-        adContainerLeft.appendChild(adDivLeft);
-
-
-        // Load and manage old right side ad
-        const adContainerRight = document.createElement('div');
-        adContainerRight.id = 'ad-container-right';
-        document.body.appendChild(adContainerRight);
-
-        const adScriptRight = document.createElement('script');
-        adScriptRight.async = true;
-        adScriptRight.dataset.cfasync = false;
-        adScriptRight.src = "//nauseousrocketjosephine.com/05eae561a20f1048cd6a66809e334afc/invoke.js";
-        adContainerRight.appendChild(adScriptRight);
-
-        const adDivRight = document.createElement('div');
-        adDivRight.id = 'container-05eae561a20f1048cd6a66809e334afc';
-        adContainerRight.appendChild(adDivRight);
-
     </script>
 </body>
 
