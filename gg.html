@@ -28,12 +28,14 @@
             cursor: pointer;
         }
 
-        /* Add this CSS to position the ad on the right side */
-        #ad-container-right {
+        /* Add this CSS to position the new ad on the right side */
+        #ad-container-new-right {
             position: fixed;
             top: 50%;
             right: 0;
             transform: translateY(-50%);
+            width: 37.5%;
+            margin: 0 auto;
             z-index: 1000;
         }
     </style>
@@ -159,11 +161,34 @@
         </div>
     </section>
 
-    <!-- Ad container for the right side -->
-    <div id="ad-container-right">
+    <!-- Existing ad containers -->
+    <div style="display: flex;">
+        <div id="ad-container-left" style="width: 37.5%; margin: 0 auto;"></div>
+        <div id="ad-container-right" style="width: 37.5%; margin: 0 auto;"></div>
+    </div>
+
+    <!-- New ad container for the right side -->
+    <div id="ad-container-new-right">
         <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
         <div id="container-26f99f279d9572c177802119f182ef42"></div>
     </div>
+
+    <!-- Existing scripts -->
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
+    <script>
+        const adContainerLeft = document.getElementById('ad-container-left');
+        const adDivLeft = document.createElement('div');
+        adDivLeft.id = 'container-d346d49dc3aa153789af37394f6f3f70';
+        adContainerLeft.appendChild(adDivLeft);
+    </script>
+
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/05eae561a20f1048cd6a66809e334afc/invoke.js"></script>
+    <script>
+        const adContainerRight = document.getElementById('ad-container-right');
+        const adDivRight = document.createElement('div');
+        adDivRight.id = 'container-05eae561a20f1048cd6a66809e334afc';
+        adContainerRight.appendChild(adDivRight);
+    </script>
 
     <div id="overlay" style="display: none;"></div>
     <script>
@@ -188,7 +213,6 @@
         setTimeout(() => {
             overlay.style.display = 'block';
         }, 5000); // 5 seconds (adjust as needed)
-
     </script>
 </body>
 
