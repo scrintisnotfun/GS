@@ -41,22 +41,6 @@
             background: none; /* Remove background */
             border: none; /* Remove border */
         }
-
-        /* Style for the duplicated ads container */
-        #duplicated-ads-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            padding: 20px;
-            background-color: #0f0f17;
-            margin-top: 20px;
-        }
-
-        .ad-item {
-            width: calc(14.28% - 10px); /* 7 ads per row with 10px gap */
-            min-width: 150px; /* Minimum width for each ad */
-        }
     </style>
 </head>
 
@@ -190,57 +174,61 @@
         <div id="ad-container-right" style="width: 37.5%; margin: 0 auto;"></div>
     </div>
 
-    <!-- Duplicated ads container -->
-    <div id="duplicated-ads-container"></div>
-
-    <!-- Existing scripts -->
+    <!-- Duplicated ad scripts -->
     <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
     <script>
-        const adContainerLeft = document.getElementById('ad-container-left');
-        const adDivLeft = document.createElement('div');
-        adDivLeft.id = 'container-d346d49dc3aa153789af37394f6f3f70';
-        adContainerLeft.appendChild(adDivLeft);
+        const adContainerLeft1 = document.getElementById('ad-container-left');
+        const adDivLeft1 = document.createElement('div');
+        adDivLeft1.id = 'container-d346d49dc3aa153789af37394f6f3f70-1';
+        adContainerLeft1.appendChild(adDivLeft1);
     </script>
 
-    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/05eae561a20f1048cd6a66809e334afc/invoke.js"></script>
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
     <script>
-        const adContainerRight = document.getElementById('ad-container-right');
-        const adDivRight = document.createElement('div');
-        adDivRight.id = 'container-05eae561a20f1048cd6a66809e334afc';
-        adContainerRight.appendChild(adDivRight);
+        const adContainerLeft2 = document.getElementById('ad-container-left');
+        const adDivLeft2 = document.createElement('div');
+        adDivLeft2.id = 'container-d346d49dc3aa153789af37394f6f3f70-2';
+        adContainerLeft2.appendChild(adDivLeft2);
     </script>
 
-    <!-- Script to duplicate ads -->
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
     <script>
-        const duplicatedAdsContainer = document.getElementById('duplicated-ads-container');
-        const adScriptUrls = [
-            "//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js",
-            "//nauseousrocketjosephine.com/05eae561a20f1048cd6a66809e334afc/invoke.js"
-        ];
+        const adContainerLeft3 = document.getElementById('ad-container-left');
+        const adDivLeft3 = document.createElement('div');
+        adDivLeft3.id = 'container-d346d49dc3aa153789af37394f6f3f70-3';
+        adContainerLeft3.appendChild(adDivLeft3);
+    </script>
 
-        // Function to create an ad element
-        const createAdElement = (scriptUrl, containerId) => {
-            const adItem = document.createElement('div');
-            adItem.className = 'ad-item';
-            const script = document.createElement('script');
-            script.async = true;
-            script.dataset.cfasync = false;
-            script.src = scriptUrl;
-            const container = document.createElement('div');
-            container.id = containerId;
-            adItem.appendChild(script);
-            adItem.appendChild(container);
-            return adItem;
-        };
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
+    <script>
+        const adContainerLeft4 = document.getElementById('ad-container-left');
+        const adDivLeft4 = document.createElement('div');
+        adDivLeft4.id = 'container-d346d49dc3aa153789af37394f6f3f70-4';
+        adContainerLeft4.appendChild(adDivLeft4);
+    </script>
 
-        // Duplicate ads 7 times
-        for (let i = 0; i < 7; i++) {
-            adScriptUrls.forEach((scriptUrl, index) => {
-                const containerId = `container-${i}-${index}`;
-                const adElement = createAdElement(scriptUrl, containerId);
-                duplicatedAdsContainer.appendChild(adElement);
-            });
-        }
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
+    <script>
+        const adContainerLeft5 = document.getElementById('ad-container-left');
+        const adDivLeft5 = document.createElement('div');
+        adDivLeft5.id = 'container-d346d49dc3aa153789af37394f6f3f70-5';
+        adContainerLeft5.appendChild(adDivLeft5);
+    </script>
+
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
+    <script>
+        const adContainerLeft6 = document.getElementById('ad-container-left');
+        const adDivLeft6 = document.createElement('div');
+        adDivLeft6.id = 'container-d346d49dc3aa153789af37394f6f3f70-6';
+        adContainerLeft6.appendChild(adDivLeft6);
+    </script>
+
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
+    <script>
+        const adContainerLeft7 = document.getElementById('ad-container-left');
+        const adDivLeft7 = document.createElement('div');
+        adDivLeft7.id = 'container-d346d49dc3aa153789af37394f6f3f70-7';
+        adContainerLeft7.appendChild(adDivLeft7);
     </script>
 
     <div id="overlay" style="display: none;"></div>
