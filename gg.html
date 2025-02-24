@@ -28,20 +28,18 @@
             cursor: pointer;
         }
 
-        /* Add this CSS to position the new ad container */
+        /* Add this CSS to position and scale the new ad container */
         #ad-container-new-right {
             position: fixed;
             top: 50%; /* Center vertically */
             right: 20px; /* Position on the right side with some margin */
-            transform: translateY(-50%); /* Center vertically */
-            width: 25%; /* Smaller width */
+            transform: translateY(-50%) scale(0.375); /* Center vertically and scale to 37.5% */
+            transform-origin: top right; /* Ensure scaling starts from the top-right corner */
             z-index: 1000;
         }
 
         /* Ensure the ad content scales down */
         #ad-container-new-right > div {
-            transform: scale(0.8); /* Scale down the ad content */
-            transform-origin: top left; /* Ensure scaling starts from the top-left corner */
             background: none; /* Remove background */
             border: none; /* Remove border */
         }
