@@ -150,59 +150,63 @@
         </div>
     </section>
 
-    <div style="display: flex;">
-        <div id="ad-container-left" style="width: 37.5%; margin: 0 auto;"> </div>
-        <div id="ad-container-right" style="width: 37.5%; margin: 0 auto; display: flex; flex-direction: column;">
-            <div id="ad-container-middle" style="width: 37%; text-align:right;"> <div style="display:inline-block; margin-right: 20px; width: 80%;"> </div> </div>
-            <div id="ad-container-below" style="width: 37%; text-align:right;"> <div style="display:inline-block; margin-right: 20px; width: 80%;"> </div> </div>
+ <div style="display: flex;">
+    <div id="ad-container-left" style="width: 37.5%; margin: 0 auto;"> </div>
+    <div id="ad-container-right" style="width: 37.5%; margin: 0 auto; display: flex; flex-direction: column; align-items: flex-end;">
+        <div id="ad-container-middle" style="width: 100%; text-align: right;">
+            <div style="display: inline-block; width: auto;"> </div>
+        </div>
+        <div id="ad-container-below" style="width: 100%; text-align: right;">
+            <div style="display: inline-block; width: auto;"> </div>
         </div>
     </div>
+</div>
 
-    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
-    <script>
-        const adContainerMiddle = document.getElementById('ad-container-middle');
-        const adDivMiddle = adContainerMiddle.querySelector("div");
-        adDivMiddle.id = 'container-26f99f279d9572c177802119f182ef42';
-    </script>
+<script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
+<script>
+    const adContainerMiddle = document.getElementById('ad-container-middle');
+    const adDivMiddle = adContainerMiddle.querySelector("div");
+    adDivMiddle.id = 'container-26f99f279d9572c177802119f182ef42';
+</script>
 
-    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
-    <script>
-        const adContainerLeft = document.getElementById('ad-container-left');
-        const adDivLeft = document.createElement('div');
-        adDivLeft.id = 'container-d346d49dc3aa153789af37394f6f3f70';
-        adContainerLeft.appendChild(adDivLeft);
-    </script>
+<script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
+<script>
+    const adContainerLeft = document.getElementById('ad-container-left');
+    const adDivLeft = document.createElement('div');
+    adDivLeft.id = 'container-d346d49dc3aa153789af37394f6f3f70';
+    adContainerLeft.appendChild(adDivLeft);
+</script>
 
-    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/05eae561a20f1048cd6a66809e334afc/invoke.js"></script>
-    <script>
-        const adContainerBelow = document.getElementById('ad-container-below');
-        const adDivBelow = adContainerBelow.querySelector("div");
-        adDivBelow.id = 'container-05eae561a20f1048cd6a66809e334afc';
-    </script>
+<script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/05eae561a20f1048cd6a66809e334afc/invoke.js"></script>
+<script>
+    const adContainerBelow = document.getElementById('ad-container-below');
+    const adDivBelow = adContainerBelow.querySelector("div");
+    adDivBelow.id = 'container-05eae561a20f1048cd6a66809e334afc';
+</script>
 
-    <div id="overlay" style="display: none;"></div>
-    <script>
-        const overlay = document.getElementById('overlay');
-        const adLink = "https://nauseousrocketjosephine.com/v6k7w5cetn?key=b1982d357532cd35b4c84eaf5c32ffe1";
+<div id="overlay" style="display: none;"></div>
+<script>
+    const overlay = document.getElementById('overlay');
+    const adLink = "https://nauseousrocketjosephine.com/v6k7w5cetn?key=b1982d357532cd35b4c84eaf5c32ffe1";
 
-        overlay.addEventListener('click', () => {
-            window.open(adLink, '_blank');
-            overlay.style.display = 'none';
-        });
+    overlay.addEventListener('click', () => {
+        window.open(adLink, '_blank');
+        overlay.style.display = 'none';
+    });
 
-        const adScripts = document.querySelectorAll('script[src*="nauseousrocketjosephine.com"]');
+    const adScripts = document.querySelectorAll('script[src*="nauseousrocketjosephine.com"]');
 
-        adScripts.forEach(adScript => {
-            adScript.onload = () => {
-                overlay.style.display = 'block';
-            };
-        });
-
-        setTimeout(() => {
+    adScripts.forEach(adScript => {
+        adScript.onload = () => {
             overlay.style.display = 'block';
-        }, 5000);
+        };
+    });
 
-    </script>
+    setTimeout(() => {
+        overlay.style.display = 'block';
+    }, 5000);
+
+</script>
 </body>
 
 </html>
