@@ -28,7 +28,7 @@
             cursor: pointer;
         }
 
-        /* Add this CSS to make the new ad container smaller */
+        /* Add this CSS to make the new ad container smaller and remove background */
         #ad-container-new-right {
             width: 25%; /* Smaller width */
             margin: 0 auto; /* Center within the flex container */
@@ -38,6 +38,8 @@
         #ad-container-new-right > div {
             transform: scale(0.8); /* Scale down the ad content */
             transform-origin: top left; /* Ensure scaling starts from the top-left corner */
+            background: none; /* Remove background */
+            border: none; /* Remove border */
         }
     </style>
 </head>
@@ -161,7 +163,7 @@
 
                 <!-- New ad container for the right side -->
                 <div class="w-full md:w-1/4 p-7 animate-on-scroll-right animate__animated animate__backInRight" id="ad-container-new-right">
-                    <div class="h-full p-8 border border-[#0f0f17] rounded-xl bg-[#0f0f17]">
+                    <div>
                         <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
                         <div id="container-26f99f279d9572c177802119f182ef42"></div>
                     </div>
