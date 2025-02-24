@@ -28,18 +28,16 @@
             cursor: pointer;
         }
 
-        /* Add this CSS to position and scale the new ad container */
+        /* Add this CSS to position the new ad container */
         #ad-container-new-right {
-            position: fixed;
-            top: 50%; /* Center vertically */
-            right: 20px; /* Position on the right side with some margin */
-            transform: translateY(-50%) scale(0.375); /* Center vertically and scale to 37.5% */
-            transform-origin: top right; /* Ensure scaling starts from the top-right corner */
-            z-index: 1000;
+            width: 25%; /* Smaller width */
+            margin-left: 20px; /* Add some spacing between the gateway boxes and the ad */
         }
 
         /* Ensure the ad content scales down */
         #ad-container-new-right > div {
+            transform: scale(0.8); /* Scale down the ad content */
+            transform-origin: top left; /* Ensure scaling starts from the top-left corner */
             background: none; /* Remove background */
             border: none; /* Remove border */
         }
@@ -162,15 +160,17 @@
                         </button>
                     </div>
                 </div>
+
+                <!-- New ad container for the right side -->
+                <div class="w-full md:w-1/4 p-7" id="ad-container-new-right">
+                    <div>
+                        <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
+                        <div id="container-26f99f279d9572c177802119f182ef42"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- New ad container for the right side -->
-    <div id="ad-container-new-right">
-        <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
-        <div id="container-26f99f279d9572c177802119f182ef42"></div>
-    </div>
 
     <!-- Existing ad containers -->
     <div style="display: flex;">
