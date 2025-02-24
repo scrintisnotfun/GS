@@ -28,14 +28,13 @@
             cursor: pointer;
         }
 
-        /* Add this CSS to position the new ad on the right side */
+        /* Add this CSS to position and scale the new ad container */
         #ad-container-new-right {
             position: fixed;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-            width: 37.5%;
-            margin: 0 auto;
+            top: 50%; /* Center vertically */
+            right: 0; /* Position on the right side */
+            transform: translateY(-50%) scale(0.375); /* Center and scale down to 37.5% */
+            transform-origin: top right; /* Ensure scaling starts from the top-right corner */
             z-index: 1000;
         }
     </style>
@@ -160,59 +159,60 @@
             </div>
         </div>
     </section>
-<!-- Existing ad containers -->
-<div style="display: flex;">
-    <div id="ad-container-left" style="width: 37.5%; margin: 0 auto;"></div>
-    <div id="ad-container-right" style="width: 37.5%; margin: 0 auto;"></div>
-</div>
 
-<!-- New ad container for the right side -->
-<div id="ad-container-new-right" style="width: 37.5%; margin: 0 auto;">
-    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
-    <div id="container-26f99f279d9572c177802119f182ef42"></div>
-</div>
+    <!-- Existing ad containers -->
+    <div style="display: flex;">
+        <div id="ad-container-left" style="width: 37.5%; margin: 0 auto;"></div>
+        <div id="ad-container-right" style="width: 37.5%; margin: 0 auto;"></div>
+    </div>
 
-<!-- Existing scripts -->
-<script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
-<script>
-    const adContainerLeft = document.getElementById('ad-container-left');
-    const adDivLeft = document.createElement('div');
-    adDivLeft.id = 'container-d346d49dc3aa153789af37394f6f3f70';
-    adContainerLeft.appendChild(adDivLeft);
-</script>
+    <!-- New ad container for the right side -->
+    <div id="ad-container-new-right">
+        <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
+        <div id="container-26f99f279d9572c177802119f182ef42"></div>
+    </div>
 
-<script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/05eae561a20f1048cd6a66809e334afc/invoke.js"></script>
-<script>
-    const adContainerRight = document.getElementById('ad-container-right');
-    const adDivRight = document.createElement('div');
-    adDivRight.id = 'container-05eae561a20f1048cd6a66809e334afc';
-    adContainerRight.appendChild(adDivRight);
-</script>
+    <!-- Existing scripts -->
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
+    <script>
+        const adContainerLeft = document.getElementById('ad-container-left');
+        const adDivLeft = document.createElement('div');
+        adDivLeft.id = 'container-d346d49dc3aa153789af37394f6f3f70';
+        adContainerLeft.appendChild(adDivLeft);
+    </script>
 
-<div id="overlay" style="display: none;"></div>
-<script>
-    const overlay = document.getElementById('overlay');
-    const adLink = "https://nauseousrocketjosephine.com/v6k7w5cetn?key=b1982d357532cd35b4c84eaf5c32ffe1";
+    <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/05eae561a20f1048cd6a66809e334afc/invoke.js"></script>
+    <script>
+        const adContainerRight = document.getElementById('ad-container-right');
+        const adDivRight = document.createElement('div');
+        adDivRight.id = 'container-05eae561a20f1048cd6a66809e334afc';
+        adContainerRight.appendChild(adDivRight);
+    </script>
 
-    overlay.addEventListener('click', () => {
-        window.open(adLink, '_blank');
-        overlay.style.display = 'none'; // Hide the overlay after click
-    });
+    <div id="overlay" style="display: none;"></div>
+    <script>
+        const overlay = document.getElementById('overlay');
+        const adLink = "https://nauseousrocketjosephine.com/v6k7w5cetn?key=b1982d357532cd35b4c84eaf5c32ffe1";
 
-    // Show the overlay after the ad loads (adjust timing as needed)
-    const adScripts = document.querySelectorAll('script[src*="nauseousrocketjosephine.com"]'); // Select ALL ad scripts
+        overlay.addEventListener('click', () => {
+            window.open(adLink, '_blank');
+            overlay.style.display = 'none'; // Hide the overlay after click
+        });
 
-    adScripts.forEach(adScript => {
-        adScript.onload = () => {
+        // Show the overlay after the ad loads (adjust timing as needed)
+        const adScripts = document.querySelectorAll('script[src*="nauseousrocketjosephine.com"]'); // Select ALL ad scripts
+
+        adScripts.forEach(adScript => {
+            adScript.onload = () => {
+                overlay.style.display = 'block';
+            };
+        });
+
+        // Optional: Timeout to show the overlay even if the ad fails to load
+        setTimeout(() => {
             overlay.style.display = 'block';
-        };
-    });
-
-    // Optional: Timeout to show the overlay even if the ad fails to load
-    setTimeout(() => {
-        overlay.style.display = 'block';
-    }, 5000); // 5 seconds (adjust as needed)
-</script>
+        }, 5000); // 5 seconds (adjust as needed)
+    </script>
 </body>
 
 </html>
