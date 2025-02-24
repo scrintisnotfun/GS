@@ -27,6 +27,21 @@
             z-index: 9999;
             cursor: pointer;
         }
+
+#ad-container-new-right {
+    position: fixed;
+    top: 50%; /* Center vertically */
+    right: 0; /* Position all the way to the right */
+    transform: translateY(-50%) scale(0.175); /* Center vertically and scale to 17.5% */
+    transform-origin: top right; /* Ensure scaling starts from the top-right corner */
+    z-index: 1000;
+}
+
+/* Ensure the ad content scales down */
+#ad-container-new-right > div {
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+}
     </style>
 </head>
 
@@ -149,9 +164,20 @@
             </div>
         </div>
     </section>
- <div style="display: flex;">  <div id="ad-container-left" style="width: 37.5%; margin: 0 auto;"> </div> <div id="ad-container-right" style="width: 37.5%; margin: 0 auto;"> </div> </div>
 
+    <!-- New ad container for the right side -->
+    <div id="ad-container-new-right">
+        <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
+        <div id="container-26f99f279d9572c177802119f182ef42"></div>
+    </div>
 
+    <!-- Existing ad containers -->
+    <div style="display: flex;">
+        <div id="ad-container-left" style="width: 37.5%; margin: 0 auto;"></div>
+        <div id="ad-container-right" style="width: 37.5%; margin: 0 auto;"></div>
+    </div>
+
+    <!-- Existing scripts -->
     <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
     <script>
         const adContainerLeft = document.getElementById('ad-container-left');
@@ -167,7 +193,6 @@
         adDivRight.id = 'container-05eae561a20f1048cd6a66809e334afc';
         adContainerRight.appendChild(adDivRight);
     </script>
-
 
     <div id="overlay" style="display: none;"></div>
     <script>
@@ -192,7 +217,6 @@
         setTimeout(() => {
             overlay.style.display = 'block';
         }, 5000); // 5 seconds (adjust as needed)
-
     </script>
 </body>
 
