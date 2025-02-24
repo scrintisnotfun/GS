@@ -27,6 +27,20 @@
             z-index: 9999;
             cursor: pointer;
         }
+
+        /* Add this CSS to make the new ad container smaller and remove background */
+        #ad-container-new-right {
+            width: 25%; /* Smaller width */
+            margin: 0 auto; /* Center within the flex container */
+        }
+
+        /* Ensure the ad content scales down */
+        #ad-container-new-right > div {
+            transform: scale(0.8); /* Scale down the ad content */
+            transform-origin: top left; /* Ensure scaling starts from the top-left corner */
+            background: none; /* Remove background */
+            border: none; /* Remove border */
+        }
     </style>
 </head>
 
@@ -146,12 +160,25 @@
                         </button>
                     </div>
                 </div>
+
+                <!-- New ad container for the right side -->
+                <div class="w-full md:w-1/4 p-7 animate-on-scroll-right animate__animated animate__backInRight" id="ad-container-new-right">
+                    <div>
+                        <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/26f99f279d9572c177802119f182ef42/invoke.js"></script>
+                        <div id="container-26f99f279d9572c177802119f182ef42"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
- <div style="display: flex;">  <div id="ad-container-left" style="width: 37.5%; margin: 0 auto;"> </div> <div id="ad-container-right" style="width: 37.5%; margin: 0 auto;"> </div> </div>
 
+    <!-- Existing ad containers -->
+    <div style="display: flex;">
+        <div id="ad-container-left" style="width: 37.5%; margin: 0 auto;"></div>
+        <div id="ad-container-right" style="width: 37.5%; margin: 0 auto;"></div>
+    </div>
 
+    <!-- Existing scripts -->
     <script async="async" data-cfasync="false" src="//nauseousrocketjosephine.com/d346d49dc3aa153789af37394f6f3f70/invoke.js"></script>
     <script>
         const adContainerLeft = document.getElementById('ad-container-left');
@@ -167,7 +194,6 @@
         adDivRight.id = 'container-05eae561a20f1048cd6a66809e334afc';
         adContainerRight.appendChild(adDivRight);
     </script>
-
 
     <div id="overlay" style="display: none;"></div>
     <script>
@@ -192,7 +218,6 @@
         setTimeout(() => {
             overlay.style.display = 'block';
         }, 5000); // 5 seconds (adjust as needed)
-
     </script>
 </body>
 
