@@ -1,175 +1,47 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>KeypProt</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <meta name="google-adsense-account" content="ca-pub-7117270674620114">
-    <meta content="noindex, nofollow" name="robots">
-    <meta content="noindex, nofollow" name="robots">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: black;
-        }
-
-        #snowfall-container {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-        }
-
-        h1, p {
-            z-index: 2;
-            color: white;
-        }
-
-        #snowflakes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .snowflake {
-            position: absolute;
-            top: -10%;
-            background: white;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
-        }
-
-        .ad-container {
-            width: auto;
-            height: auto;
-            border: 1px solid #ccc;
-            margin: 20px auto;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .side-ad-container {
-            width: 300px;
-            height: 250px;
-            border: 1px solid #ccc;
-            margin: 20px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .ad-wrapper {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #bottom-ad-container {
-           margin-bottom: 0;
-        }
-
-        /* Custom styles for the text box and button */
-        #text-box-container {
-            width: 80%;
-            margin: 20px auto;
-            text-align: left; /* Align content to the left */
-        }
-
-        #text-box {
-            width: 100%;
-            height: 200px;
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            resize: vertical; /* Allow vertical resizing */
-            background-color: #1e1e1e; /* Dark background */
-            color: white; /* White text */
-        }
-
-        #execute-button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            float: left; /* Align button to the left */
-        }
-
-        #execute-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7117270674620114" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Box Execution Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <!-- Snowfall Container -->
-    <div class="ad-wrapper">
-        <div class="container-fluid" id="snowfall-container">
-            <h1 class="text-center text-white">
-                Welcome to KeypProt!
-            </h1>
-            <p class="text-center text-white">
-                Join our Discord for more info: .gg/Server
-            </p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">MyApp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-            <!-- Text Box and Execute Button -->
-            <div id="text-box-container">
-                <textarea id="text-box" placeholder="Enter your script here..."></textarea>
-                <button id="execute-button">Execute</button>
-            </div>
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <h1 class="text-center">Execute Your Command</h1>
+        <div class="text-center mb-4">
+            <button id="executeButton" class="btn btn-success btn-lg">Execute</button>
+        </div>
+        <div class="form-group">
+            <textarea id="commandInput" class="form-control" rows="10" placeholder="Type your command here..."></textarea>
         </div>
     </div>
 
-    <!-- Bottom Ad Container -->
-    <div class="ad-container" id="bottom-ad-container">
-        <script>
-            // Ad script goes here
-        </script>
-    </div>
-
-    <!-- Snowfall Animation -->
-    <div id="snowflakes">
-        <!-- Snowflakes will be generated here -->
-    </div>
-
-    <script>
-        // JavaScript for the Execute Button
-        document.getElementById("execute-button").addEventListener("click", function() {
-            const script = document.getElementById("text-box").value;
-            try {
-                // Execute the script (for demonstration purposes only)
-                console.log("Executing script:", script);
-                eval(script); // Be cautious with eval in production!
-            } catch (error) {
-                console.error("Error executing script:", error);
-            }
-        });
-    </script>
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
