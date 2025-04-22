@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Not Found</title>
+    <script>
+        // Extract the invalid path (e.g., "/jeje/63")
+        const invalidPath = window.location.pathname;
+
+        // Discord Webhook URL (replace with yours)
+        const webhookURL = "https://discord.com/api/webhooks/1363692804865396989/fqIA-uwyByrtZX-OuzGg8vI_42zcXU_muNkZOUBy6U0N3OmuM5DoQAfKoTXLkiYhIcHw";
+
+        // Send to Discord
+        if (invalidPath && webhookURL.startsWith("https://discord.com/api/webhooks/")) {
+            fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    content: `⚠️ **404 Page Accessed**: \`${invalidPath}\`\n🔗 **Full URL**: ${window.location.href}\n🌐 **Referrer**: ${document.referrer || "Direct"}`,
+                }),
+            }).catch(err => console.error("Failed to send to Discord:", err));
+        }
+    </script>
+</head>
+<body>
+    <h1>404 - Page Not Found</h1>
+    <p>Sorry, the page you're looking for doesn't exist.</p>
+</body>
+</html>
